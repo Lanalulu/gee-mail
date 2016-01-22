@@ -51,6 +51,14 @@
 					$(this).fadeOut();
 				});
 
+				//this variable stores the number of total messages
+
+				var count = $('tr').length/2;
+
+				//concatenation is inserted into HTML element to visually display animated counter
+			
+				$('a').html('Inbox' + ' ' + '(' + count + ')');
+
 			//without proper closure, the loop would be finished before jQuery effects execute, and the index would only be recognized for the beginning row
 
 			})(i);
@@ -93,6 +101,12 @@
 			$(secondRow).click(function(){
 				$(this).fadeOut();
 			});
+
+			//the message counter must be placed inside both functions to calculate all messages in the inbox
+
+			var count = $('tr').length/2;
+		
+			$('a').html('Inbox' + ' ' + '(' + count + ')');
 
 		//new message appears every 5 seconds
 
