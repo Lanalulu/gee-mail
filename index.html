@@ -12,6 +12,10 @@
 
 		for (var i=0; i < sender.length; i++) {
 
+			//anonymous function provides closure for jQuery event handlers to execute inside for loop
+
+			(function () {
+
 				//table for arrays' data
 
 				var table = document.getElementById("table");
@@ -36,6 +40,20 @@
 				cell2.innerHTML = subject[i];
 				cell3.innerHTML = date;
 				secondRow.innerHTML = body[i];
+
+				//jquery effects to intially hide message's body until clicked, then user can click either row to hide again
+
+				$(secondRow).hide();
+				$(row).click(function(){
+						$(secondRow).fadeToggle();
+					});
+				$(secondRow).click(function(){
+					$(this).fadeOut();
+				});
+
+			//without proper closure, the loop would be finished before jQuery effects execute, and the index would only be recognized for the beginning row
+
+			})(i);
 
 		}
 
@@ -65,6 +83,16 @@
 			if (i == subject.length) i = 0; cell2.insertAdjacentHTML('afterBegin', subject[i++]);
 			cell3.insertAdjacentHTML('afterbegin', date);
 			if (i == body.length) i = 0; secondRow.insertAdjacentHTML('afterBegin', body[i++]);
+
+			//jQuery initially hides secondRow, but it appears/disappears when either row is clicked
+
+			$(secondRow).hide();
+			$(row).click(function(){
+				$(secondRow).fadeToggle();
+			});
+			$(secondRow).click(function(){
+				$(this).fadeOut();
+			});
 
 		//new message appears every 5 seconds
 
