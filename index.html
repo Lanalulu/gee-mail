@@ -32,12 +32,43 @@
 
 				//populates the rows and cells
 
-				cell1.innerHTML += sender[i];
-				cell2.innerHTML += subject[i];
-				cell3.innerHTML += date;
-				secondRow.innerHTML += body[i];
+				cell1.innerHTML = sender[i];
+				cell2.innerHTML = subject[i];
+				cell3.innerHTML = date;
+				secondRow.innerHTML = body[i];
 
 		}
+
+		setInterval(function getNewMessage(){
+
+			//must redefine variables inside existing new function
+
+			var table = document.getElementById("table");
+			var row = table.insertRow(0);
+			var secondRow = table.insertRow(1);
+
+			var cell1 = row.insertCell(0);
+			var cell2 = row.insertCell(1);
+			var cell3 = row.insertCell(2);
+
+			var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+			var d = new Date();
+			var monthName = months[d.getMonth()];
+			var day = d.getDate();
+			var year = d.getFullYear();
+			var date = monthName + " " + day + "," + " " + year;
+
+			//if conditional statement inserts array element one by one and resets index to "0" after reaching end. Messages generate from top
+
+	        if (i == sender.length) i = 0; cell1.insertAdjacentHTML('afterBegin', sender[i++]);
+			if (i == subject.length) i = 0; cell2.insertAdjacentHTML('afterBegin', subject[i++]);
+			cell3.insertAdjacentHTML('afterbegin', date);
+			if (i == body.length) i = 0; secondRow.insertAdjacentHTML('afterBegin', body[i++]);
+
+		//new message appears every 5 seconds
+
+		}, 5000);
 	};
    
     </script>
