@@ -123,6 +123,18 @@
 
 		}, 5000);
 
+		$('.btn-compose').click(function(){
+   				$('.compose-box').show();
+			});
+
+		$('.btn-inbox, .total').click(function(){
+   				$('.compose-box').hide();
+			});
+
+		$('.btn-logout').click(function(){
+   				window.location = "logout/index.html";
+			});
+
 	};
    
     </script>
@@ -131,17 +143,19 @@
 		<header class="jumbotron">
 			<h2>Gee-Mail</h2>
 			<ul>
-				<li class="total">
-			    </li>
-			    <li>Sent
-			   	</li>
-			   	<li>Trash
-			    </li>
+				<li class="total"></li>
+				<li>Sent</li>
+			   	<li>Trash</li>
 			</ul>
 		</header>
 	
 		<div id="main" class="container-fluid">
 			<table id="table" class="table"></table>
+			<div class="compose-box">
+				<p class="recipient">To:</p>
+				<p class="subject">Subject:</p>
+				<p class="message">Message here.</p>
+			</div>
 		</div>
 
 		<div class="btn-inbox">

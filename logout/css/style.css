@@ -1,0 +1,14 @@
+html {
+	background-color: #00994d;
+}
+
+#text {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-top: -21.425px;
+		margin-left: -262.95px;
+		font-size: 30px;
+		cursor: pointer;
+		color: #fff;
+}
