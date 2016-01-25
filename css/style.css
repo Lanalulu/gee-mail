@@ -1,55 +1,150 @@
-html, body {
-	margin: 0;
+html {
+	background-color: #00994d;
+}
+
+.jumbotron {
+	position: absolute;
+	left: 0;
+	top: 0;
 	padding: 0;
-}
-
-header {
-	position: absolute;
-	height: 100px;
-	left: 0;
-	right: 0;
-}
-
-h1 {
-	text-align: center;
-	color: #f00;
-}
-
-#side {
-	position: absolute;
-	top: 100px;
-	left: 0;
-	bottom: 0;
+	margin: 0;
 	width: 200px;
+	height: 400px;
+}
+
+h2 {
+	text-align: center;
+	color: #ff4d4d;
+	font-style: italic;
 }
 
 li {
 	list-style-type: none;
 	font-size: 20px;
+	padding-top: 20px;
+	cursor: pointer;
 }
-
-a {
-	text-decoration: none;
-}	
 
 #main {
-	position: relative;
-	top: 100px;
-	left: 200px;
-	width: 1000px;
-}
-
-table {
 	position: absolute;
-	background-color: #eee;
-	width: 100%;
+	left: 200px;
+	height: 400px;
+	overflow-y: auto;
+	background-color: rgba(255, 255, 255, .8);
+	padding: 0;
 }
-
 tr {
 	cursor: pointer;
-	height: 35px;
+	font-weight: bold;
+	display: block;
+}
+
+tr.active {
+	font-weight: normal;
+	background-color: #F5F5F5;
 }
 
 td {
-	width: 350px;
+	width: 400px;
+	height: 40px;
+	line-height: 40px !important;
+	border-top-color: #ccc !important;
+}
+
+.btn-inbox {
+	position: absolute;
+	top: 425px;
+	left: 140px;
+	width: 150px;
+	height: 150px;
+	font-size: 30px;
+	background-color: #0058b3;
+	color: #f2f2f2;
+	text-align: center;
+	cursor: pointer;
+}
+
+.btn-inbox:hover {
+	background-color: #003266;
+}
+
+.btn-inbox img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -64px;
+	margin-top: -64px;
+}
+
+.btn-inbox p {
+	position: absolute;
+	top: 150px;
+	left: 50%;
+	margin-left: -36.69px;
+}
+
+.btn-compose {
+	position: absolute;
+	top: 425px;
+	left: 50%;
+	margin-left: -5.5%;
+	width: 150px;
+	height: 150px;
+	font-size: 30px;
+	background-color: #e68a00;
+	color: #f2f2f2;
+	text-align: center;
+	cursor: pointer;
+}
+
+.btn-compose:hover {
+	background-color: #995c00;
+}
+
+.btn-compose img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -64px;
+	margin-top: -67px;
+}
+
+.btn-compose p {
+	position: absolute;
+	top: 150px;
+	left: 50%;
+	margin-left: -64px;
+}
+
+.btn-logout {
+	position: absolute;
+	right: 140px;
+	top: 425px;
+	width: 150px;
+	height: 150px;
+	font-size: 30px;
+	background-color: #cc2900;
+	color: #f2f2f2;
+	text-align: center;
+	cursor: pointer;
+}
+
+.btn-logout:hover {
+	background-color: #801a00;
+}
+
+.btn-logout img {
+	width: 115px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -57.5px;
+	margin-top: -57.5px;
+}
+
+.btn-logout p {
+	position: absolute;
+	top: 150px;
+	left: 50%;
+	margin-left: -45.875px;
 }

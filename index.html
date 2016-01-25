@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
 		<title>Gee-Mail Challenge</title>
@@ -57,7 +58,12 @@
 
 				//concatenation is inserted into HTML element to visually display animated counter
 			
-				$('a').html('Inbox' + ' ' + '(' + count + ')');
+				$('.total').html('Total' + ' ' + '(' + count + ')');
+
+				$('tr').click(function(){
+   					$(this).addClass('active');
+   					$(secondRow).addClass('active');
+				});
 
 			//without proper closure, the loop would be finished before jQuery effects execute, and the index would only be recognized for the beginning row
 
@@ -106,28 +112,49 @@
 
 			var count = $('tr').length/2;
 		
-			$('a').html('Inbox' + ' ' + '(' + count + ')');
+			$('.total').html('Total' + ' ' + '(' + count + ')');
+
+			$('tr').click(function(){
+   				$(this).addClass('active');
+   				$(secondRow).addClass('active');
+			});
 
 		//new message appears every 5 seconds
 
 		}, 5000);
+
 	};
    
     </script>
 	</head>
 	<body>
-		<header>
-			<h1>Gee-Mail</h1>
-		</header>
-		<div id="side">
+		<header class="jumbotron">
+			<h2>Gee-Mail</h2>
 			<ul>
-				<li><a href="#inbox" title="Inbox"></a>
+				<li class="total">
+			    </li>
+			    <li>Sent
+			   	</li>
+			   	<li>Trash
 			    </li>
 			</ul>
+		</header>
+	
+		<div id="main" class="container-fluid">
+			<table id="table" class="table"></table>
 		</div>
 
-		<div class="container" id="main">
-			<table id="table"></table>
+		<div class="btn-inbox">
+			<img src="images/inbox.png"/>
+			<p>Inbox</p>
+		</div>
+		<div class="btn-compose">
+			<img src="images/compose.png"/>
+			<p>Compose</p>
+		</div>
+		<div class="btn-logout">
+			<img src="images/logout.png"/>
+			<p>Logout</p>
 		</div>
 	</body>
 </html>
