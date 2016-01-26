@@ -125,10 +125,12 @@
 
 		$('.btn-compose').click(function(){
    				$('.compose-box').show();
+   				$('table').hide();
 			});
 
 		$('.btn-inbox, .total').click(function(){
    				$('.compose-box').hide();
+   				$('table').show();
 			});
 
 		$('.btn-logout').click(function(){
@@ -151,11 +153,12 @@
 	
 		<div id="main" class="container-fluid">
 			<table id="table" class="table"></table>
-			<div class="compose-box">
-				<p class="recipient">To:</p>
-				<p class="subject">Subject:</p>
-				<p class="message">Message here.</p>
-			</div>
+		</div>
+
+		<div class="compose-box">
+			<p class="recipient">To:</p>
+			<p class="subject">Subject:</p>
+			<p class="message">Message here.</p>
 		</div>
 
 		<div class="btn-inbox">
